@@ -2,7 +2,7 @@ function showVerticalMessage(message) {
   const TOUPPERCASE = message[0].toUpperCase() + message.slice(1, 10);
   const MAXLENGTH = message.length > 10
   
-  if (message[0] === 'м') {
+  if (message.startsWith("м")) {
     message = TOUPPERCASE;
   }
   
@@ -19,3 +19,4 @@ function showVerticalMessage(message) {
 
 
 showVerticalMessage('марафондлядрузей');
+
