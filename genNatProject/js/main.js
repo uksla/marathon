@@ -21,6 +21,7 @@ function sendRequest() {
         resolve(
           getGender()
           .then(data => gender = data.gender)
+          .then(() => console.log(gender))
           .catch(err => console.log(err))
         )
       })
@@ -29,6 +30,7 @@ function sendRequest() {
         resolve(
           getNationality()
           .then((data) => nationality = data.country[0].country_id)
+          .then(() => console.log(nationality))
         )
       })
 
