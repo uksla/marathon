@@ -1,0 +1,43 @@
+const BASE_INFO = {
+  city: undefined,
+  currentTemp: null,
+
+}
+
+UI_ELEMENTS.selectFavouriteElement.addEventListener('click', favHandler);
+
+function favHandler() {
+  if (this.classList.contains('weather-app__info-image--active')) {
+    for (let i = 0; i < favList.length; i++) {
+      if (favList[i].name === BASE_INFO.city) {
+        favList.splice(i, 1);
+        storage.deleteFavouriteCitie();
+        storage.saveFavoriteCities(favList);
+        console.log(UI_ELEMENTS.favouriteElementsList.lastElementChild);
+        console.log(UI_ELEMENTS.favouriteElementsList.childNodes.length);
+        // UI_ELEMENTS.favouriteElementsList.lastElementChild.remove();
+        
+        console.log(favList);
+        this.classList.toggle('weather-app__info-image--active');
+      }
+    }
+
+    for (let j = 0; j < UI_ELEMENTS.favouriteElementsList.childNodes.length; j++) {
+      const isEqualElement = UI_ELEMENTS.favouriteElementsList.childNodes[j].textContent === BASE_INFO.city; 
+      if (isEqualElement) {
+        UI_ELEMENTS.favouriteElementsList.childNodes[j].remove();
+        console.log(j);
+      }
+    }
+  } else if (!isInputEmpty & (typeof BASE_INFO.city !== 'undefined')) {
+    buildFavourite();
+    console.log(typeof BASE_INFO.city);
+
+    pushFav(BASE_INFO.city);
+
+    storage.saveFavoriteCities(favList);
+
+    this.classList.toggle('weather-app__info-image--active');
+  }
+}
+

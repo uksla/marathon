@@ -5,7 +5,7 @@ const UI_ELEMENTS = {
   formElement: document.querySelector('.weather-app__form'),
   weatherImageElement: document.querySelector('.weather-app__info-status'),
   selectFavouriteElement: document.querySelector('.weather-app__info-image'),
-  favouriteElementsList: document.querySelector('.weather-app__locations-list')
+  favouriteElementsList: document.querySelector('.weather-app__locations-list'),
 }
 
 export {
